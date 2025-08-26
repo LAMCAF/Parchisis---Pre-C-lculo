@@ -1,0 +1,8 @@
+<div class="dice-container">
+    <div class="dice" [class.rolling]="rolling">{{ dice1 }}</div>
+    <div class="dice" [class.rolling]="rolling">{{ dice2 }}</div>
+  </div>
+  <button (click)="rollDice()" [disabled]="rolling">
+    {{ rolling ? "Lanzando..." : "Lanzar Dados" }}
+  </button>
+  

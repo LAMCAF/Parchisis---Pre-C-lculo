@@ -1,0 +1,224 @@
+body {
+  background-color: black;
+}
+
+table {
+  margin: auto;
+  background-color: white;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.amarillo {
+  background-color: yellow;
+  text-align: center;
+}
+
+.verde {
+  background-color: green;
+  text-align: center;
+}
+
+.azul {
+  background-color: blue;
+  text-align: center;
+}
+
+.rojo {
+  background-color: red;
+  text-align: center;
+}
+
+#vacio {
+  background-color: black;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.circulo {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.circulo2 {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vertical {
+  transform: rotate(270deg);
+}
+
+.fichas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ficha {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+.ficha-amarilla {
+  background-color: gold;
+}
+.ficha-azul {
+  background-color: darkblue;
+}
+
+.ficha-verde {
+  background-color: darkgreen;
+}
+
+.ficha-rojo {
+  background-color: darkred;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-content h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.popup-content label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.popup-content button {
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-content button:first-of-type {
+  background-color: #4caf50;
+  color: white;
+}
+
+.popup-content button:first-of-type:hover {
+  background-color: #45a049;
+}
+
+.popup-content button:last-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.popup-content button:last-of-type:hover {
+  background-color: #e53935;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* oscurece fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  position: relative;
+  min-width: 300px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}

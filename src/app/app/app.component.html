@@ -1,0 +1,3508 @@
+<h1>Tablero de parchis</h1>
+
+<div
+  style="width: 100%; text-align: center; display: grid; place-items: center"
+>
+  <h1>{{ title }}</h1>
+  <p>Es el turno del jugador: {{ jugadores[jugadorActual].color }}</p>
+  <app-dice (diceRolled)="lanzarDados($event[0], $event[1])"></app-dice>
+  <!-- Escuchar el evento de los dados -->
+  <p>
+    Fichas en casilla grande:
+    {{ jugadores[jugadorActual].fichasEnCasillaGrande }}
+  </p>
+  <p>Oportunidades restantes: {{ jugadores[jugadorActual].oportunidades }}</p>
+</div>
+
+<table border="1px">
+  <!-- 1 -->
+  <tr>
+    <td class="amarillo" colspan="7" rowspan="7">
+      <div class="fichas" id="fichaamarilla">
+        @if(jugadores[0].posicionficha1 == 'fichaamarilla'){
+        <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+        }
+      </div>
+    </td>
+    <td colspan="2" id="1">
+      @if (jugadores[0].posicionficha1 == '1') {
+      <div
+        class="ficha ficha-amarilla"
+        id="ficha-amarilla1"
+        (click)="moverFicha('ficha-amarilla1', '1')"
+      ></div>
+      } @if (jugadores[3].posicionficha1 == '1') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '1') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '1') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="amarillo" colspan="2" id="92">
+      - @if (jugadores[0].posicionficha1 == '92') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '92') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '92') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '92') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="91">
+      @if (jugadores[0].posicionficha1 == '91') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '91') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '91') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '91') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="verde" colspan="7" rowspan="7">
+      <div class="fichas" id="fichaverde">
+        @if(jugadores[3].posicionficha1 == 'fichaverde'){
+        <div class="ficha ficha-verde" id="ficha-verde1"></div>
+        }
+      </div>
+    </td>
+  </tr>
+
+  <!-- 2 -->
+  <tr>
+    <td colspan="2" id="2">
+      @if (jugadores[0].posicionficha1 == '2') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '2') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '2') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '2') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="amarillo" colspan="2" id="93">
+      @if (jugadores[0].posicionficha1 == '93') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '93') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '93') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '93') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="90">
+      @if (jugadores[0].posicionficha1 == '90') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '90') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '90') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }@if (jugadores[2].posicionficha1 == '90') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">5</div>
+    </td>
+  </tr>
+  <!-- 3 -->
+  <tr>
+    <td colspan="2" id="3">
+      @if (jugadores[0].posicionficha1 == '3') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '3') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '3') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '3') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+
+      <div class="circulo">?</div>
+    </td>
+    <td class="amarillo" colspan="2" id="94">
+      - @if (jugadores[0].posicionficha1 == '94') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '94') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '94') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '94') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="89">
+      @if (jugadores[0].posicionficha1 == '89') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '89') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '89') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '89') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 4 -->
+  <tr>
+    <td colspan="2" id="4">
+      @if (jugadores[0].posicionficha1 == '4') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '4') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '4') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '4') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="amarillo" colspan="2" id="95">
+      - @if (jugadores[0].posicionficha1 == '95') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '95') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '95') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '95') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="88">
+      @if (jugadores[0].posicionficha1 == '88') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '88') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '88') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '88') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">4</div>
+    </td>
+  </tr>
+
+  <!-- 5 -->
+  <tr>
+    <td class="amarillo" id="5" colspan="2">
+      salida @if (jugadores[0].posicionficha1 == '5') {
+      <div
+        class="ficha ficha-amarilla"
+        id="ficha-amarilla1"
+        (click)="moverFicha('ficha-amarilla1', '5')"
+      ></div>
+      } @if (jugadores[3].posicionficha1 == '5') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '5') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '5') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="amarillo" colspan="2" id="96">
+      - @if (jugadores[0].posicionficha1 == '96') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '96') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      }@if (jugadores[1].posicionficha1 == '96') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '96') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="87">
+      @if (jugadores[0].posicionficha1 == '87') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '87') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '87') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '87') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+  <!-- 6 -->
+  <tr>
+    <td colspan="2" id="6">
+      @if (jugadores[0].posicionficha1 == '6') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '6') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '6') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '6') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="amarillo" colspan="2" id="97">
+      @if (jugadores[0].posicionficha1 == '97') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '97') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '97') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '97') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="86">
+      @if (jugadores[0].posicionficha1 == '86') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '86') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '86') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '86') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">3</div>
+    </td>
+  </tr>
+
+  <!-- 7 -->
+  <tr>
+    <td colspan="2" id="7">
+      @if (jugadores[0].posicionficha1 == '7') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '7') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '7') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '7') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">1</div>
+    </td>
+    <td class="amarillo" colspan="2" id="98">
+      - @if (jugadores[0].posicionficha1 == '98') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '98') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '98') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '98') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="85">
+      @if (jugadores[0].posicionficha1 == '85') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '85') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '85') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '85') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 8 -->
+  <!-- Primera línea justo debajo de los grandes -->
+  <tr>
+    <td rowspan="2" id="16">
+      @if (jugadores[0].posicionficha1 == '16') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '16') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '16') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '16') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td rowspan="2" id="15">
+      @if (jugadores[0].posicionficha1 == '15') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '15') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '15') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '15') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">5</div>
+    </td>
+    <td rowspan="2" id="14">
+      @if (jugadores[0].posicionficha1 == '14') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '14') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '14') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '14') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td rowspan="2" id="13">
+      @if (jugadores[0].posicionficha1 == '13') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '13') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '13') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '13') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">4</div>
+    </td>
+
+    <td rowspan="2" id="12">
+      @if (jugadores[0].posicionficha1 == '12') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '12') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '12') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '12') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td rowspan="2" id="11">
+      @if (jugadores[0].posicionficha1 == '11') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '11') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '11') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '11') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">3</div>
+    </td>
+
+    <td rowspan="2" id="10">
+      @if (jugadores[0].posicionficha1 == '10') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '10') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '10') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '10') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="vacio"></td>
+    <td id="8">
+      @if (jugadores[0].posicionficha1 == '8') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '8') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '8') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '8') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="100" class="amarillo">
+      <div>Llegada</div>
+      @if (jugadores[0].posicionficha1 == '100') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '100') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '100') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '100') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td id="99" class="amarillo">
+      @if (jugadores[0].posicionficha1 == '99') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '99') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '99') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '99') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="84">
+      @if (jugadores[0].posicionficha1 == '84') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '84') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '84') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '84') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">2</div>
+    </td>
+    <td id="vacio"></td>
+    <td rowspan="2" id="82">
+      @if (jugadores[0].posicionficha1 == '82') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '82') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '82') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '82') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">1</div>
+    </td>
+
+    <td rowspan="2" id="81">
+      @if (jugadores[0].posicionficha1 == '81') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '81') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '81') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '81') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="verde" rowspan="2" id="80">
+      <div class="vertical">
+        @if (jugadores[3].posicionficha1 == '80') {
+        <div class="ficha ficha-verde" id="ficha-verde1"></div>
+        } @if (jugadores[0].posicionficha1 == '80') {
+        <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+        } @if (jugadores[1].posicionficha1 == '80') {
+        <div class="ficha ficha-azul" id="ficha-azul1"></div>
+        } @if (jugadores[2].posicionficha1 == '80') {
+        <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+        }
+      </div>
+    </td>
+    <td rowspan="2" id="79">
+      @if (jugadores[0].posicionficha1 == '79') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '79') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '79') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '79') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td rowspan="2" id="78">
+      @if (jugadores[0].posicionficha1 == '78') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '78') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '78') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '78') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">?</div>
+    </td>
+    <td rowspan="2" id="77">
+      @if (jugadores[0].posicionficha1 == '77') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '77') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '77') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '77') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td rowspan="2" id="76">
+      @if (jugadores[0].posicionficha1 == '76') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '76') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '76') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '76') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+  <!-- 9 -->
+  <tr>
+    <td id="9">
+      @if (jugadores[0].posicionficha1 == '9') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '9') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '9') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '9') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">2</div>
+    </td>
+    <td colspan="4" rowspan="4" id="fin">
+      <img src="assets/logo.jpeg" />
+    </td>
+    <td id="83">
+      @if (jugadores[0].posicionficha1 == '83') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '83') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '83') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '83') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 10 -->
+  <tr>
+    <td id="17" class="azul" rowspan="2">
+      | @if (jugadores[0].posicionficha1 == '17') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '17') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '17') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '17') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="18" class="azul" rowspan="2">
+      | @if (jugadores[0].posicionficha1 == '18') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '18') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '18') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '18') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="19" class="azul" rowspan="2">
+      | @if (jugadores[0].posicionficha1 == '19') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '19') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '19') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '19') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td id="20" class="azul" rowspan="2">
+      | @if (jugadores[0].posicionficha1 == '20') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '20') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '20') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '20') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="21" class="azul" rowspan="2">
+      | @if (jugadores[0].posicionficha1 == '21') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '21') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '21') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '21') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="22" class="azul" rowspan="2">
+      | @if (jugadores[0].posicionficha1 == '22') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '22') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '22') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '22') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td id="23" class="azul" rowspan="2">
+      @if (jugadores[0].posicionficha1 == '23') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '23') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '23') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '23') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="24" class="azul">
+      @if (jugadores[0].posicionficha1 == '24') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '24') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '24') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '24') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="75" class="verde">
+      <div class="vertical">Salida</div>
+      @if (jugadores[0].posicionficha1 == '75') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '75') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '75') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '75') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td class="verde" rowspan="2" id="73">
+      @if (jugadores[0].posicionficha1 == '73') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '73') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '73') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '73') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="verde" rowspan="2" id="72">
+      @if (jugadores[0].posicionficha1 == '72') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '72') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '72') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '72') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="verde" rowspan="2" id="71">
+      @if (jugadores[0].posicionficha1 == '71') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '71') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '71') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '71') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td class="verde" rowspan="2" id="70">
+      @if (jugadores[0].posicionficha1 == '70') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '70') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '70') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '70') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="verde" rowspan="2" id="69">
+      @if (jugadores[0].posicionficha1 == '69') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '69') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '69') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '69') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="verde" rowspan="2" id="68">
+      @if (jugadores[0].posicionficha1 == '68') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '68') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '68') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '68') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td class="verde" rowspan="2" id="67">
+      | @if (jugadores[2].posicionficha1 == '67') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '67') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '67') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '67') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+  </tr>
+  <!-- 11 -->
+  <tr>
+    <td id="25" class="azul" style="height: 60px">
+      <div class="vertical">Llegada</div>
+      @if (jugadores[0].posicionficha1 == '25') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '25') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '25') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '25') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="74" class="verde">
+      @if (jugadores[0].posicionficha1 == '74') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '74') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '74') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '74') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 12 -->
+  <tr>
+    <td rowspan="2" id="26">
+      @if (jugadores[0].posicionficha1 == '26') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '26') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '26') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '26') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td rowspan="2" id="27">
+      @if (jugadores[0].posicionficha1 == '27') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '27') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '27') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '27') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td rowspan="2" id="28">
+      @if (jugadores[0].posicionficha1 == '28') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '28') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '28') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '28') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">?</div>
+    </td>
+
+    <td rowspan="2" id="29">
+      @if (jugadores[0].posicionficha1 == '29') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '29') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '29') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '29') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="30" class="azul" rowspan="2">
+      <div class="vertical">
+        Salida @if (jugadores[0].posicionficha1 == '30') {
+        <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+        } @if (jugadores[3].posicionficha1 == '30') {
+        <div class="ficha ficha-verde" id="ficha-verde1"></div>
+        } @if (jugadores[1].posicionficha1 == '30') {
+        <div class="ficha ficha-azul" id="ficha-azul1"></div>
+        } @if (jugadores[2].posicionficha1 == '30') {
+        <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+        }
+      </div>
+    </td>
+    <td id="31" rowspan="2">
+      @if (jugadores[0].posicionficha1 == '31') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '31') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '31') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '31') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td id="32" rowspan="2">
+      @if (jugadores[0].posicionficha1 == '32') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '32') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '32') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '32') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo2">1</div>
+    </td>
+
+    <td id="33">
+      @if (jugadores[0].posicionficha1 == '33') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '33') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '33') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '33') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+
+    <td id="59">
+      @if (jugadores[2].posicionficha1 == '59') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '59') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '59') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '59') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+      <div class="circulo2">2</div>
+    </td>
+
+    <td rowspan="2" id="60">
+      @if (jugadores[0].posicionficha1 == '60') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '60') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[2].posicionficha1 == '60') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[1].posicionficha1 == '60') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+    <td rowspan="2" id="61">
+      @if (jugadores[0].posicionficha1 == '61') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '61') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[2].posicionficha1 == '61') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[1].posicionficha1 == '61') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+      <div class="circulo2">3</div>
+    </td>
+    <td rowspan="2" id="62">
+      @if (jugadores[0].posicionficha1 == '62') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '62') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[2].posicionficha1 == '62') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[1].posicionficha1 == '62') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+
+    <td rowspan="2" id="63">
+      @if (jugadores[2].posicionficha1 == '63') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '63') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '63') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '63') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+      <div class="circulo2">4</div>
+    </td>
+    <td rowspan="2" id="64">
+      @if (jugadores[2].posicionficha1 == '64') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '64') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '64') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '64') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+    <td rowspan="2" id="65">
+      @if (jugadores[2].posicionficha1 == '65') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '65') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '65') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '65') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+      <div class="circulo2">5</div>
+    </td>
+
+    <td rowspan="2" id="66">
+      @if (jugadores[2].posicionficha1 == '66') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '66') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '66') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '66') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+  </tr>
+  <!-- 13 -->
+  <tr>
+    <td id="vacio"></td>
+    <td id="34">
+      @if (jugadores[0].posicionficha1 == '34') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '34') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '34') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '34') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">2</div>
+    </td>
+    <td id="49" class="rojo">
+      @if (jugadores[0].posicionficha1 == '49') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '49') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '49') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '49') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="50" class="rojo">
+      <div>Llegada</div>
+      @if (jugadores[0].posicionficha1 == '50') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '50') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '50') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '50') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td id="58">
+      @if (jugadores[2].posicionficha1 == '58') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '58') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '58') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '58') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+    <td id="vacio"></td>
+  </tr>
+
+  <!-- 14 -->
+  <tr>
+    <td class="azul" colspan="7" rowspan="7">
+      <div class="fichas" id="fichaazul">
+        @if(jugadores[1].posicionficha1 == 'fichaazul'){
+        <div class="ficha ficha-azul" id="ficha-azul1"></div>
+        }
+      </div>
+    </td>
+    <td colspan="2" id="35">
+      @if (jugadores[0].posicionficha1 == '35') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '35') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[2].posicionficha1 == '35') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="rojo" colspan="2" id="48">
+      @if (jugadores[0].posicionficha1 == '48') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '48') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '48') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '48') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="57">
+      @if (jugadores[2].posicionficha1 == '57') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '57') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '57') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '57') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+      <div class="circulo">1</div>
+    </td>
+    <td class="rojo" colspan="7" rowspan="7">
+      <div class="fichas" id="ficharojo">
+        @if(jugadores[2].posicionficha1 == 'ficharojo'){
+        <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+        }
+      </div>
+    </td>
+  </tr>
+
+  <!-- 15 -->
+  <tr>
+    <td colspan="2" id="36">
+      @if (jugadores[0].posicionficha1 == '36') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '36') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '36') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '36') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">3</div>
+    </td>
+    <td class="rojo" colspan="2" id="47">
+      @if (jugadores[0].posicionficha1 == '47') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '47') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '47') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '47') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="56">
+      @if (jugadores[2].posicionficha1 == '56') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '56') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '56') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '56') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 16 -->
+  <tr>
+    <td colspan="2" id="37">
+      @if (jugadores[0].posicionficha1 == '37') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '37') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '37') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '37') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="rojo" colspan="2" id="46">
+      @if (jugadores[0].posicionficha1 == '46') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '46') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '46') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '46') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="rojo" colspan="2" id="55">
+      Salida @if (jugadores[2].posicionficha1 == '55') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      } @if (jugadores[0].posicionficha1 == '55') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '55') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '55') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 17 -->
+  <tr>
+    <td colspan="2" id="38">
+      @if (jugadores[0].posicionficha1 == '38') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '38') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '38') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '38') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">4</div>
+    </td>
+    <td class="rojo" colspan="2" id="45">
+      @if (jugadores[0].posicionficha1 == '45') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '45') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '45') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '45') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="54">
+      @if (jugadores[0].posicionficha1 == '54') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '54') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '54') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '54') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 18 -->
+  <tr>
+    <td colspan="2" id="39">
+      @if (jugadores[0].posicionficha1 == '39') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '39') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '39') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '39') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="rojo" colspan="2" id="44">
+      - @if (jugadores[0].posicionficha1 == '44') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '44') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '44') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '44') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="53">
+      @if (jugadores[0].posicionficha1 == '53') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '53') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '53') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '53') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">?</div>
+    </td>
+  </tr>
+
+  <!-- 19 -->
+  <tr>
+    <td colspan="2" id="40">
+      @if (jugadores[0].posicionficha1 == '40') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '40') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '40') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '40') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+      <div class="circulo">5</div>
+    </td>
+    <td class="rojo" colspan="2" id="43">
+      - @if (jugadores[0].posicionficha1 == '43') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '43') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '43') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '43') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="52">
+      @if (jugadores[0].posicionficha1 == '52') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '52') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '52') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '52') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+
+  <!-- 20 -->
+  <tr>
+    <td colspan="2" id="41">
+      @if (jugadores[0].posicionficha1 == '41') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '41') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '41') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      }@if (jugadores[2].posicionficha1 == '41') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td class="rojo" colspan="2" id="42">
+      - @if (jugadores[0].posicionficha1 == '42') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '42') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '42') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '42') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+    <td colspan="2" id="51">
+      @if (jugadores[0].posicionficha1 == '51') {
+      <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
+      } @if (jugadores[3].posicionficha1 == '51') {
+      <div class="ficha ficha-verde" id="ficha-verde1"></div>
+      } @if (jugadores[1].posicionficha1 == '51') {
+      <div class="ficha ficha-azul" id="ficha-azul1"></div>
+      } @if (jugadores[2].posicionficha1 == '51') {
+      <div class="ficha ficha-rojo" id="ficha-rojo1"></div>
+      }
+    </td>
+  </tr>
+</table>
+
+@if(modal1){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Potenciacion/Pot_P1/Pregunta_1.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P1/A_1.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P1/B_1.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P1/C_1_respuesta.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P1/D_1.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal2){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Potenciacion/Pot_P2/Pregunta_2.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P2/A_2_respuesta.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P2/B_2.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P2/C_2.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P2/D_2.png"
+            alt="Opción D"
+            style="width: 130px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal3){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Potenciacion/Pot_P3/Pregunta_3.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P3/A_3_respuesta.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P3/B_3.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P3/C_3.png"
+            alt="Opción C"
+            style="width: 130px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P3/D_3.png"
+            alt="Opción D"
+            style="width: 110px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal4){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Potenciacion/Pot_P4/Pregunta_4.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P4/A_4.png"
+            alt="Opción A"
+            style="width: 90px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P4/B_4.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P4/C_4_respuesta.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P4/D_4.png"
+            alt="Opción D"
+            style="width: 120px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal5){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Potenciacion/Pot_P5/Pregunta_5.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P5/A_5.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P5/B_5_respuesta.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P5/C_5.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P5/D_5.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal6){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Potenciacion/Pot_P6/Pregunta_6.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P6/A_6.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P6/B_6.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P6/C_6_respuesta.png"
+            alt="Opción C"
+            style="width: 110px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Potenciacion/Pot_P6/D_6.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal7){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Radicacion/Rad_P6/Pregunta_rad_6.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 130px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P6/rad_6_A_respuesta.png"
+            alt="Opción A"
+            style="width: 90px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P6/rad_6_B.png"
+            alt="Opción B"
+            style="width: 80px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P6/rad_6_C.png"
+            alt="Opción C"
+            style="width: 90px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P6/rad_6_D.png"
+            alt="Opción D"
+            style="width: 115px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal8){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Radicacion/Rad_P1/Pregunta_rad_1.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 100px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P1/rad_1_A.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P1/rad_1_B.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P1/rad_1_C.png"
+            alt="Opción C"
+            style="width: 110px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P1/rad_1_D_respuesta.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal9){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Radicacion/Rad_P2/Pregunta_rad_2.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P2/rad_2_A.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P2/rad_2_B.png"
+            alt="Opción B"
+            style="width: 110px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P2/rad_2_C.png"
+            alt="Opción C"
+            style="width: 110px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P2/rad_2_D_respuesta.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal10){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Radicacion/Rad_P3/Pregunta_rad_3.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 180px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P3/rad_3_A.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P3/rad_3_B_respuesta.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P3/rad_3_C.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P3/rad_3_D.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal11){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Radicacion/Rad_P4/Pregunta_rad_4.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 180px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P4/rad_4_A.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P4/rad_4_B.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P4/rad_4_C_respuesta.png"
+            alt="Opción C"
+            style="width: 120px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P4/rad_4_D.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal12){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Radicacion/Rad_P5/Pregunta_rad_5.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P5/rad_5_A.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P5/rad_5_B.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P5/rad_5_C_respuesta.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Radicacion/Rad_P5/rad_5_D.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal13){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Factorizacion/Fac_P6/Pregunta_fac_6.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P6/fac_6_A.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P6/fac_6_B.png"
+            alt="Opción B"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P6/fac_6_C.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P6/fac_6_D_respuesta.png"
+            alt="Opción D"
+            style="width: 170px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal14){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Factorizacion/Fac_P1/Pregunta_fac_1.png"
+        alt="Pregunta 1"
+        style="width: 550px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P1/fac_1_A_respuesta.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P1/fac_1_B.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P1/fac_1_C.png"
+            alt="Opción C"
+            style="width: 120px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P1/fac_1_D.png"
+            alt="Opción D"
+            style="width: 120px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal15){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Factorizacion/Fac_P2/Pregunta_fac_2.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P2/fac_2_A.png"
+            alt="Opción A"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P2/fac_2_B.png"
+            alt="Opción B"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P2/fac_2_C_respuesta.png"
+            alt="Opción C"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P2/fac_2_D.png"
+            alt="Opción D"
+            style="width: 220px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal16){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Factorizacion/Fac_P3/Pregunta_fac_3.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P3/fac_3_A_respuesta.png"
+            alt="Opción A"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P3/fac_3_B.png"
+            alt="Opción B"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P3/fac_3_C.png"
+            alt="Opción C"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P3/fac_3_D.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal17){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Factorizacion/Fac_P4/Pregunta_fac_4.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P4/fac_4_A_respuesta.png"
+            alt="Opción A"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P4/fac_4_B.png"
+            alt="Opción B"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P4/fac_4_C.png"
+            alt="Opción C"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P4/fac_4_D.png"
+            alt="Opción D"
+            style="width: 150px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal18){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Factorizacion/Fac_P5/Pregunta_fac_5.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P5/fac_5_A.png"
+            alt="Opción A"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P5/fac_5_B_respuesta.png"
+            alt="Opción B"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P5/fac_5_C.png"
+            alt="Opción C"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Factorizacion/Fac_P5/fac_5_D.png"
+            alt="Opción D"
+            style="width: 220px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal19){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Racionalizacion/Rac_P6/Pregunta_6.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P6/A_6.png"
+            alt="Opción A"
+            style="width: 130px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P6/B_6_respuesta.png"
+            alt="Opción B"
+            style="width: 130px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P6/C_6.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P6/D_6.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal20){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Racionalizacion/Rac_P1/Pregunta_1.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P1/A_1.png"
+            alt="Opción A"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P1/B_1_respuesta.png"
+            alt="Opción B"
+            style="width: 150px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P1/C_1.png"
+            alt="Opción C"
+            style="width: 120px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P1/D_1.png"
+            alt="Opción D"
+            style="width: 80px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal21){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Racionalizacion/Rac_P2/Pregunta_2.png"
+        alt="Pregunta 1"
+        style="width: 500px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P2/A_2.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P2/B_2.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P2/C_2.png"
+            alt="Opción C"
+            style="width: 90px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P2/D_2_respuesta.png"
+            alt="Opción D"
+            style="width: 110px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal22){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Racionalizacion/Rac_P3/Pregunta_3.png"
+        alt="Pregunta 1"
+        style="width: 650px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P3/A_3.png"
+            alt="Opción A"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P3/B_3_respuesta.png"
+            alt="Opción B"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P3/C_3.png"
+            alt="Opción C"
+            style="width: 100px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P3/D_3.png"
+            alt="Opción D"
+            style="width: 100px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal23){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Racionalizacion/Rac_P4/Pregunta_4.png"
+        alt="Pregunta 1"
+        style="width: 650px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P4/A_4_respuesta.png"
+            alt="Opción A"
+            style="width: 200px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P4/B_4.png"
+            alt="Opción B"
+            style="width: 200px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P4/C_4.png"
+            alt="Opción C"
+            style="width: 130px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P4/D_4.png"
+            alt="Opción D"
+            style="width: 120px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modal24){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <div>
+      <img
+        src="assets/Racionalizacion/Rac_P5/Pregunta_5.png"
+        alt="Pregunta 1"
+        style="width: 600px; height: 200px"
+      />
+    </div>
+
+    <form #quizForm="ngForm">
+      <div class="options">
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="A"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P5/A_5.png"
+            alt="Opción A"
+            style="width: 130px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="B"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P5/B_5.png"
+            alt="Opción B"
+            style="width: 130px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="C"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P5/C_5_respuesta.png"
+            alt="Opción C"
+            style="width: 220px; height: auto"
+          />
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="respuesta"
+            [(ngModel)]="respuestaSeleccionada"
+            value="D"
+          />
+
+          <img
+            src="assets/Racionalizacion/Rac_P5/D_5.png"
+            alt="Opción D"
+            style="width: 220px; height: auto"
+          />
+        </label>
+      </div>
+
+      <button type="button" (click)="validarRespuesta()">
+        Validar respuesta
+      </button>
+    </form>
+
+    @if(positive){
+    <p style="color: green; font-size: 40px; text-align: center">
+      Respuesta correcta!
+    </p>
+    }@else if (negative) {
+    <p style="color: red; font-size: 40px; text-align: center">
+      Respuesta incorrecta!
+    </p>
+    } @if(closeeButton){
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    }
+  </div>
+</div>
+} @if(modalWin){
+<div class="overlay">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h2 style="text-align: center; margin-bottom: 12px">
+      ¡{{ winnerColor }} ganó la partida! 🏆
+    </h2>
+
+    <button class="close-btn" (click)="closeModal()">Cerrar</button>
+  </div>
+</div>
+}
