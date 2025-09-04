@@ -464,7 +464,8 @@
         }
       </td>
       <td class="verde" rowspan="2" id="80">
-        <div class="vertical">
+        <div class="vertical">Salida</div>
+         <div class="vertical">
           @if (jugadores[3].posicionficha1 == '80') {
           <div class="ficha ficha-verde" id="ficha-verde1"></div>
           } @if (jugadores[0].posicionficha1 == '80') {
@@ -646,7 +647,7 @@
         }
       </td>
       <td id="75" class="verde">
-        <div class="vertical">Salida</div>
+        <div class="vertical">Llegada</div>
         @if (jugadores[0].posicionficha1 == '75') {
         <div class="ficha ficha-amarilla" id="ficha-amarilla1"></div>
         } @if (jugadores[3].posicionficha1 == '75') {
@@ -1290,7 +1291,7 @@
     </tr>
   </table>
 </div>
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 25%;">
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 30%;">
     <app-dice (diceRolled)="lanzarDados($event[0], $event[1])"></app-dice>
   </div>
 </div>
